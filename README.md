@@ -25,4 +25,5 @@
 
 
 # 🔗참고
-* <https://mslilsunshine.tistory.com/70>
+* [DNN 참고 링크](https://mslilsunshine.tistory.com/70)
+* [Haar Cascade 참고 링크](https://bkshin.tistory.com/entry/%EC%BB%B4%ED%93%A8%ED%84%B0-%EB%B9%84%EC%A0%84-1-%ED%95%98%EB%A5%B4-%EC%BA%90%EC%8A%A4%EC%BC%80%EC%9D%B4%EB%93%9C-%EC%96%BC%EA%B5%B4-%EA%B2%80%EC%B6%9C-Haar-Cascade-Face-Detection)
