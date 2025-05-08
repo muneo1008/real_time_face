@@ -24,3 +24,5 @@
 * 2명 얼굴 인식
 
 
+# 🔗참고
+* <https://mslilsunshine.tistory.com/70>
