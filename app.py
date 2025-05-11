@@ -68,7 +68,7 @@ def update_frame():
         else:
             frame, face_count = dnn_detector.detect_faces(frame, effect,confidence)
 
-        face_count_label.config(text=f"얼굴 수: {face_count}")
+        face_count_label.config(text=f"감지 얼굴 수: {face_count}")
 
         frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         img = Image.fromarray(frame_rgb)
