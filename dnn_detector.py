@@ -21,15 +21,13 @@ def apply_effect(frame, x, y, w, h, mode="box"):
     return frame
 
 #얼굴 탐지
-def detect_faces(frame, mode="box"):
+def detect_faces(frame, mode="box", min_confidence=0.5):
     h, w = frame.shape[:2]
     blob = cv2.dnn.blobFromImage(frame, 1.0, (300, 300),
                                  (104.0, 177.0, 123.0), False, False)
     net.setInput(blob)
     detections = net.forward()
 
-    #최소 민감도
-    min_confidence=0.1
     #감지 얼굴 수
     face_cnt = 0
 
