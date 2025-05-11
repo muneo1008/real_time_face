@@ -37,6 +37,11 @@ control_frame.grid(row=1, column=2, padx=10, pady=10, sticky="n")
 face_count_label = ttk.Label(control_frame, text="얼굴 수: 0")
 face_count_label.pack(padx=5, pady=5)
 
+confidence_var = tk.DoubleVar(value=0.5)
+ttk.Label(control_frame, text="민감도 (0~1)").pack(padx=5, pady=(0, 2))
+confidence_slider = ttk.Scale(control_frame, from_=0.0, to=1.0, variable=confidence_var, orient="horizontal")
+confidence_slider.pack(padx=5, pady=5)
+
 #종료
 def on_close():
     global running
@@ -57,11 +62,11 @@ def update_frame():
 
         method = method_var.get()
         effect = effect_var.get()
-
+        confidence = confidence_var.get()
         if method == "haar":
-            frame, face_count = haar_detector.detect_faces(frame, effect)
+            frame, face_count = haar_detector.detect_faces(frame, effect,confidence)
         else:
-            frame, face_count = dnn_detector.detect_faces(frame, effect)
+            frame, face_count = dnn_detector.detect_faces(frame, effect,confidence)
 
         face_count_label.config(text=f"얼굴 수: {face_count}")
 
