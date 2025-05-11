@@ -14,9 +14,13 @@ def apply_effect(frame, x, y, w, h, mode="box"):
     return frame
 
 def detect_faces(frame, mode="box"):
+
+    #감지 얼굴 수
+    face_cnt = 0
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
     faces = face_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5)
     for (x, y, w, h) in faces:
+        face_cnt += 1
         frame = apply_effect(frame, x, y, w, h, mode)
-    return frame
+    return frame, face_cnt
